@@ -1,17 +1,17 @@
 import pgzrun
-
+from random import randint
 WIDTH = 800 
-HEIGHT = 600
+HIEGHT = 600
 score = 0
 TITLE = "packman"
-player = Actor ("pacman")
-points = Actor ("points")
+player = Actor ("pacman.png")
+points = Actor ("points.webp")
 game_over = False
 player.pos=500,400
 points.pos = 300,200
 def draw ():
     if not game_over:
-        screeen .clear()
+        screen .clear()
         screen .fill ((0,0,0))
         player.draw
         points.draw
@@ -23,8 +23,8 @@ def draw ():
         screen.draw.text("final score ="+str(score),(400,300))
 def update():
  global score
- if player.colliderect(coin):
-    coin.pos=randint(0,500),randint(0,500)
+ if player.colliderect(points):
+    points.pos=randint(0,500),randint(0,500)
     score=score+1
  if keyboard.Right:
     if player.x < WIDTH:
