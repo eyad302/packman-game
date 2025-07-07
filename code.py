@@ -21,4 +21,30 @@ def draw ():
         screen.fill ("black")
         screen.draw.text("gg",(200,200))
         screen.draw.text("final score ="+str(score),(400,300))
+def update():
+ global score
+ if player.colliderect(coin):
+    coin.pos=randint(0,500),randint(0,500)
+    score=score+1
+ if keyboard.Right:
+    if player.x < WIDTH:
+       player.x+=2
+    else:
+       player.x=0
+ if keyboard.Left:
+    if player.x > 0:
+       player.x-=2
+    else:
+       player.x=WIDTH
+ if keyboard.Down:
+    if player.y < HIEGHT:
+       player.y+=2
+    else:
+       player.y=0
+ if keyboard.Up:
+    if player.y > 0:
+       player.y-=2
+    else:
+       player.y=HIEGHT
 
+pgzrun.go()
