@@ -49,7 +49,7 @@ def update():
         score += 1
 
     # Optional: Add end condition
-    if score >= 100000000000000000000000000000:
+    if score >= 10:
         game_over = True
 
 pgzrun.go()
